@@ -1,31 +1,15 @@
 <template>
   <div id="app">
-        <!-- <OnClick/> -->
-        <TesT/>
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/fortable">For Table</router-link> |
+      <router-link to="/json">jsonplaceholder</router-link> |
+      <router-link to="/map">Map</router-link>
+    </nav>
+    <router-view/>
   </div>
 </template>
-<script>
-// import VModel from './components/VModel.vue'
-// import ForTable from './components/ForTable.vue'
-// import OnClick from './components/OnClick.vue'
-import TesT from './components/TesT.vue'
-
-export default {
-  name: 'App',
-  components:{
-      //  VModel,
-      //  ForTable,
-      //  OnClick,
-       TesT
-  },
-  data(){
-    return{
-        fio:'',
-        kurs:''
-    }
-  }
-}
-</script>
 
 <style>
 #app {
@@ -34,9 +18,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
+nav {
+  padding: 30px;
+}
 
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
