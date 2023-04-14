@@ -5,7 +5,9 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/fortable">For Table</router-link> |
       <router-link to="/json">jsonplaceholder</router-link> |
-      <router-link to="/map">Map</router-link>
+      <router-link to="/map">Map</router-link> |
+      <router-link to="/icon">Icon</router-link> |
+      <router-link to="/btn">Button Element</router-link>
     </nav>
     <router-view/>
   </div>

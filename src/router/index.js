@@ -30,6 +30,16 @@ const routes = [
     name: 'json',
     component: () => import(/* webpackChunkName: "about" */ '../components/TesT.vue')
   },
+  {
+    path: '/btn',
+    name: 'btn',
+    component: () => import(/* webpackChunkName: "about" */ '../components/ButtonView.vue')
+  },
+  {
+    path: '/icon',
+    name: 'icon',
+    component: () => import(/* webpackChunkName: "about" */ '../components/IconView.vue')
+  },
 ]
 
 const router = new VueRouter({
