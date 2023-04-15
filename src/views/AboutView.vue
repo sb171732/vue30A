@@ -1,43 +1,83 @@
 <template>
   <div class="about">
-    <el-row>
-      <el-button>Default</el-button>
-      <el-button type="primary" @click="openD">Primary</el-button>
-      <el-button type="success">Success</el-button>
-      <el-button type="info">Info</el-button>
-      <el-button type="warning">Warning</el-button>
-      <el-button type="danger">Danger</el-button>
-    </el-row>
-
-    <el-row class="w3-margin-top">
-        <el-button plain>Plain</el-button>
-        <el-button type="primary" plain>Primary</el-button>
-        <el-button type="success" plain @click="open1">Success</el-button>
-        <el-button type="info" plain>Info</el-button>
-        <el-button type="warning" plain @click="w">Warning</el-button>
-        <el-button type="danger" plain>Danger</el-button>
-      </el-row>
-     <el-row class="w3-margin-top">
-      <el-progress type="circle" :percentage="0"></el-progress>
-<el-progress type="circle" :percentage="25"></el-progress>
-<el-progress type="circle" :percentage="100" status="success"></el-progress>
-<el-progress type="circle" :percentage="70" status="warning"></el-progress>
-<el-progress type="circle" :percentage="50" status="exception"></el-progress>
-     </el-row>
-
-      <el-drawer
-      title="I am the title"
-      :visible.sync="drawer"
-      size="50%"
-      :with-header="false">
-      <span>Hi there!</span>
-      <el-progress type="circle" :percentage="0"></el-progress>
-<el-progress type="circle" :percentage="25"></el-progress>
-<el-progress type="circle" :percentage="100" status="success"></el-progress>
-<el-progress type="circle" :percentage="70" status="warning"></el-progress>
-<el-progress type="circle" :percentage="50" status="exception"></el-progress>
-</el-drawer>
-
+       
+       <el-row>    
+             <el-col class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+       </el-row>
+       <el-row>    
+             <el-col :span="12" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="12" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+       </el-row>
+       <el-row>    
+             <el-col :span="8" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="8" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="8" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+       </el-row>
+       <el-row>    
+             <el-col :span="6" class="w3-padding w3-border">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="6" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="6" class="w3-padding w3-border">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="6" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+       </el-row>
+       <el-row>    
+             <el-col :span="4" class="w3-padding w3-border">
+              <h3>Critical Analysis essay 1</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="4" class="w3-padding">
+              <h3>Critical Analysis essay 2</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="4" class="w3-padding w3-border">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="4" class="w3-padding">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="4" class="w3-padding w3-border">
+              <h3>Critical Analysis essay</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+             <el-col :span="4" class="w3-padding">
+              <h3>Critical Analysis essay 6</h3>
+              <p>Students studied The Importance of Being Earnest and wrote essays focusing on the main characters.</p>
+             </el-col>
+            
+       </el-row>
+       
+     
   </div>
 </template>
 <script>
