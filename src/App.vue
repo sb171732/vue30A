@@ -9,40 +9,29 @@
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b">
-          <el-menu-item index="1">Processing Center</el-menu-item>
-          <el-menu-item index="1-1" route="/about">About</el-menu-item>
-          <el-menu-item index="1-1" route="/json">jsonplaceholder</el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">Element</template>
-            <el-menu-item index="2-1" route="/btn">Button</el-menu-item>
-            <el-menu-item index="2-2" route="/icon">Icon</el-menu-item>
-            
-          </el-submenu>
-          <el-menu-item index="3" disabled>Info</el-menu-item>
-          <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
+          <el-menu-item v-for="m in Menu" :key="m.id" :index="m.id" :route="{name:'site',params:{name:m.route}}">{{ m.name }}</el-menu-item>
+          
 </el-menu>
 
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/fortable">For Table</router-link> |
-      <router-link to="/json">jsonplaceholder</router-link> |
-      <router-link to="/map">Map</router-link> |
-      <router-link to="/icon">Icon</router-link> |
-      <router-link to="/btn">Button Element</router-link>
-    </nav>
+   
 
     <router-view/>
   </div>
 </template>
 <script>
+import {store} from './store'
+
   export default {
     data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: 'DUZhTdwFsy2VRKMV5wdw'
       };
     },
+    computed:{
+      Menu(){ return store.state.menu  }
+    }
+    ,
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);

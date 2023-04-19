@@ -40,6 +40,11 @@ const routes = [
     name: 'icon',
     component: () => import(/* webpackChunkName: "about" */ '../components/IconView.vue')
   },
+  {
+    path: '/site:name',
+    name: 'site',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SiteView.vue')
+  },
 ]
 
 const router = new VueRouter({
