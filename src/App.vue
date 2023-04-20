@@ -9,12 +9,12 @@
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b">
-          <el-menu-item v-for="m in Menu" :key="m.id" :index="m.id" :route="{name:'site',params:{name:m.route}}">{{ m.name }}</el-menu-item>
-          
+          <el-menu-item v-for="m in Menu1()" :key="m.id"  :index="m.id" :route="{name:'site',params:{name:m.route}}" >{{ m.name }}</el-menu-item>
+          <el-submenu v-for="m in MenuSub()" :key="m.id" :index="m.id">
+            <template slot="title">{{  m.name }}</template>
+              <el-menu-item v-for="sm in SM" :key="sm.id" :index="sm.id">{{ sm.name   }}</el-menu-item>
+          </el-submenu>
 </el-menu>
-
-   
-
     <router-view/>
   </div>
 </template>
@@ -29,13 +29,20 @@ import {store} from './store'
       };
     },
     computed:{
-      Menu(){ return store.state.menu  }
+      Menu(){ return store.state.menu  },
+      SM(){ return store.state.submenu},
     }
     ,
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
-      }
+      },
+      Menu1(){
+        return this.Menu.filter((n)=>{ return n.sub.match('false') })
+      },
+      MenuSub(){
+        return this.Menu.filter((n)=>{ return n.sub.match('true') })
+      },
     }
   }
 </script>

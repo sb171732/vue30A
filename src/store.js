@@ -10,7 +10,8 @@ export const store = new Vuex.Store({
     state: {
         menu: [],
         banners: [],
-        news:[]
+        news:[],
+        submenu:[]
     },
     mutations: {
         ...vuexfireMutations,
@@ -24,6 +25,9 @@ export const store = new Vuex.Store({
         }),
         bindN: firestoreAction(({ bindFirestoreRef }) => {
             return bindFirestoreRef('news', db.collection('news'))
+        }),
+        bindSM: firestoreAction(({ bindFirestoreRef }) => {
+            return bindFirestoreRef('submenu', db.collection('submenu'))
         }),
        
        initFirebase(){
@@ -43,3 +47,4 @@ export const store = new Vuex.Store({
 store.dispatch('bindMenu')
 store.dispatch('bindB')
 store.dispatch('bindN')
+store.dispatch('bindSM')

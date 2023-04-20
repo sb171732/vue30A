@@ -3,6 +3,7 @@
        <h2> {{ getM($route.params.name)[0].name }}</h2>
        <div class="" v-if="$route.params.name==='home'" >
            <el-divider></el-divider>
+           
            <h3>news</h3>
            <el-row :gutter="20">
                 <el-col :span="16">
@@ -45,6 +46,7 @@ export default {
         Menu(){ return store.state.menu},
         News(){ return store.state.news},
         Ban(){ return store.state.banners},
+       
     }
     ,
     methods:{
