@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-menu
+    <!-- <el-menu
           :default-active="activeIndex2"
           class="el-menu-demo"
           mode="horizontal"
@@ -14,7 +14,7 @@
             <template slot="title">{{  m.name }}</template>
               <el-menu-item v-for="sm in SM" :key="sm.id" :index="sm.id">{{ sm.name   }}</el-menu-item>
           </el-submenu>
-</el-menu>
+</el-menu> -->
     <router-view/>
   </div>
 </template>
@@ -24,7 +24,6 @@ import {store} from './store'
   export default {
     data() {
       return {
-        activeIndex: '1',
         activeIndex2: 'DUZhTdwFsy2VRKMV5wdw'
       };
     },

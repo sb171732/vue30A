@@ -11,7 +11,9 @@ export const store = new Vuex.Store({
         menu: [],
         banners: [],
         news:[],
-        submenu:[]
+        submenu:[],
+        users:[],
+        zag:[]
     },
     mutations: {
         ...vuexfireMutations,
@@ -29,16 +31,32 @@ export const store = new Vuex.Store({
         bindSM: firestoreAction(({ bindFirestoreRef }) => {
             return bindFirestoreRef('submenu', db.collection('submenu'))
         }),
+        bindUser: firestoreAction(({ bindFirestoreRef }) => {
+            return bindFirestoreRef('users', db.collection('users'))
+        }),
+
+        addUser: firestoreAction((context, payload) => {
+            return db.collection('users').add(payload)
+        }),
+        delUser: firestoreAction((context, payload) => {
+            return db.collection('users').doc(payload).delete()
+        }),
+
+        bindquest: firestoreAction(({ bindFirestoreRef }) => {
+            return bindFirestoreRef('zag', db.collection('zagadki'))
+        }),
+
        
        initFirebase(){
         //  const firebaseApp =
           firebase.initializeApp({
-            apiKey: "AIzaSyDIi78t--LzwxsCKqLXlgWOzUmhtaq1ucw",
-            authDomain: "vue30app.firebaseapp.com",
-            projectId: "vue30app",
-            storageBucket: "vue30app.appspot.com",
-            messagingSenderId: "1042190249851",
-            appId: "1:1042190249851:web:7a1f4aa5cd079bdc1097de"
+            apiKey: "AIzaSyDC4qJty0l_AMa7kN-TP__cGh0cRH9BKok",
+            authDomain: "rusik-magaz17.firebaseapp.com",
+            databaseURL: "https://rusik-magaz17-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "rusik-magaz17",
+            storageBucket: "rusik-magaz17.appspot.com",
+            messagingSenderId: "37682391596",
+            appId: "1:37682391596:web:c2fa73eda7beff2eb0ff89"
           });
         },
     }
@@ -48,3 +66,5 @@ store.dispatch('bindMenu')
 store.dispatch('bindB')
 store.dispatch('bindN')
 store.dispatch('bindSM')
+store.dispatch('bindUser')
+store.dispatch('bindquest')
