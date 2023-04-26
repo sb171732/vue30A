@@ -13,7 +13,8 @@ export const store = new Vuex.Store({
         news:[],
         submenu:[],
         users:[],
-        zag:[]
+        zag:[],
+        rez:[]
     },
     mutations: {
         ...vuexfireMutations,
@@ -34,9 +35,15 @@ export const store = new Vuex.Store({
         bindUser: firestoreAction(({ bindFirestoreRef }) => {
             return bindFirestoreRef('users', db.collection('users'))
         }),
+        bindRez: firestoreAction(({ bindFirestoreRef }) => {
+            return bindFirestoreRef('rez', db.collection('rezult_zagadki'))
+        }),
 
         addUser: firestoreAction((context, payload) => {
             return db.collection('users').add(payload)
+        }),
+        saveR: firestoreAction((context, payload) => {
+            return db.collection('rezult_zagadki').add(payload)
         }),
         delUser: firestoreAction((context, payload) => {
             return db.collection('users').doc(payload).delete()
@@ -67,4 +74,5 @@ store.dispatch('bindB')
 store.dispatch('bindN')
 store.dispatch('bindSM')
 store.dispatch('bindUser')
+store.dispatch('bindRez')
 store.dispatch('bindquest')
