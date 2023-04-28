@@ -48,6 +48,11 @@ export const store = new Vuex.Store({
         delUser: firestoreAction((context, payload) => {
             return db.collection('users').doc(payload).delete()
         }),
+        updateZag: firestoreAction((context, {id, doc}) => {
+            db.collection('zagadki')
+                .doc(id)
+                .update(doc)
+        }),
 
         bindquest: firestoreAction(({ bindFirestoreRef }) => {
             return bindFirestoreRef('zag', db.collection('zagadki'))
