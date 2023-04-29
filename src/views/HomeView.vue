@@ -5,10 +5,16 @@
      <el-button v-show="array.length<=6" @click="getQ">Чаа тывызык</el-button>   
      <el-button v-show="array.length>6" @click="end()" type="warning" plain>Дөгерер</el-button>   
      <h2>{{ curr_q}}</h2>
+     <br>
+     <el-tooltip  :content="curr_h" placement="top">
+        <el-link class="w3-padding">Баажызы</el-link>
+      </el-tooltip>
+      
      <el-input v-model="answer" style="width: 400px;" ></el-input><br>
      <el-button @click="addW('ө')">ө</el-button>
      <el-button @click="addW('ң')">ң</el-button>
      <el-button @click="addW('ү')">ү</el-button>
+     
      <el-button class="w3-margin-top" @click="submit()" type="warning">Харыылаар</el-button> 
      <!-- <p>{{ curr_id }}</p>  -->
      <el-divider></el-divider>
@@ -68,6 +74,7 @@ export default {
        curr_q:'',
        curr_id:'',
        curr_a:'',
+       curr_h:'',
        array:[],
        table:false,
        dialogVisible: false,
@@ -98,6 +105,7 @@ export default {
         // this.curr_id = q.id
         this.curr_q = q.q
         this.curr_a = q.true_a
+        this.curr_h = q.hint
         this.answer = ''
 
         this.array.push({ q:this.curr_q, true_a:this.curr_a, user_a:this.answer   })
